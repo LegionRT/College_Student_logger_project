@@ -38,7 +38,7 @@ cmd in derectory makefile
 - mingw32-make          `Компиляция StudentApp.exe и StudentDLL.dll`
 - mingw32-make run      `Запуск приложения`
 Сборка и запуск тестов
-## Тесты используют Google Test. Перед сборкой нужно один раз подготовить библиотеки:
+## Тесты используют Google Test. Перед сборкой нужно один раз подготовить библиотеки
 -cmd in derectory Makefile.test
 -install_gtest.bat               `Скачивание и сборка Google Test (делается один раз)`
 -mingw32-make -f Makefile.test    `Компиляция тестов`
