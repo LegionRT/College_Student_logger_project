@@ -40,8 +40,11 @@ cmd in derectory makefile
 Сборка и запуск тестов
 ## Тесты используют Google Test. Перед сборкой нужно один раз подготовить библиотеки
 -cmd in derectory Makefile.test
+
 -install_gtest.bat               `Скачивание и сборка Google Test (делается один раз)`
+
 -mingw32-make -f Makefile.test    `Компиляция тестов`
+
 -mingw32-make -f Makefile.test run ` Запуск тестов `
 ## Очистка проекта
 - Удаление скомпилированных файлов (.exe, .dll, .o):
