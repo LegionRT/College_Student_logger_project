@@ -1,0 +1,29 @@
+CXXFLAGS = -std=c++17 -Wall -O2 -fexec-charset=CP866 -finput-charset=UTF-8 -IStudentCore
+
+GTEST_DIR = gtest_lib
+GTEST_INC = -I$(GTEST_DIR)/googletest/include
+GTEST_LIB = -L$(GTEST_DIR)/build/lib -lgtest -lgtest_main
+
+TARGET = StudentCoreTests.exe
+
+all: $(TARGET)
+
+check-gtest:
+	@if not exist "$(GTEST_DIR)\googletest\include\gtest\gtest.h" ( \
+		echo Google Test not found! Run install_gtest.bat first & \
+		exit 1 \
+	)
+
+$(TARGET): check-gtest googletest/StudentCoreTests.cpp StudentCore/StudentCore.cpp
+	@echo === Building tests ===
+	$(CXX) $(CXXFLAGS) $(GTEST_INC) -IStudentCore -o $(TARGET) googletest/StudentCoreTests.cpp StudentCore/StudentCore.cpp -Lgtest_lib/build/lib -lgtest_main -lgtest -lpthread
+	@echo === Done ===
+
+run: $(TARGET)
+	$(TARGET)
+
+clean:
+	@del /q $(TARGET) 2>nul
+	@del /q *.o 2>nul
+
+.PHONY: all check-gtest run clean
