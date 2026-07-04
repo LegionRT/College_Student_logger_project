@@ -35,15 +35,15 @@
 Компиляция основного проекта и запуск консольного меню:
 
 cmd in derectory makefile
-mingw32-make          `Компиляция StudentApp.exe и StudentDLL.dll`
-mingw32-make run      `Запуск приложения`
+- mingw32-make          `Компиляция StudentApp.exe и StudentDLL.dll`
+- mingw32-make run      `Запуск приложения`
 Сборка и запуск тестов
-##Тесты используют Google Test. Перед сборкой нужно один раз подготовить библиотеки:
-cmd in derectory Makefile.test
-install_gtest.bat               `Скачивание и сборка Google Test (делается один раз)`
-mingw32-make -f Makefile.test    `Компиляция тестов`
-mingw32-make -f Makefile.test run ` Запуск тестов `
-Очистка проекта
-Удаление скомпилированных файлов (.exe, .dll, .o):
-mingw32-make clean              ` Очистка основного приложения `
-mingw32-make -f Makefile.test clean ` Очистка тестов `
+## Тесты используют Google Test. Перед сборкой нужно один раз подготовить библиотеки:
+-cmd in derectory Makefile.test
+-install_gtest.bat               `Скачивание и сборка Google Test (делается один раз)`
+-mingw32-make -f Makefile.test    `Компиляция тестов`
+-mingw32-make -f Makefile.test run ` Запуск тестов `
+## Очистка проекта
+- Удаление скомпилированных файлов (.exe, .dll, .o):
+- mingw32-make clean              ` Очистка основного приложения `
+- mingw32-make -f Makefile.test clean ` Очистка тестов `
